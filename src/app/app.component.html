@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<mat-toolbar color="primary">
+  <span>
+    <img src="assets/img/juja_logo.png" class="angular-logo">
+    Booking hotels
+  </span>
+  <button mat-button>Hotels</button>
+  <span class="fill-remaining-space"></span>
+  <button mat-button routerLink="login">Login</button>
+  <button mat-button (click)="onLogout()">Logout</button>
+</mat-toolbar>
