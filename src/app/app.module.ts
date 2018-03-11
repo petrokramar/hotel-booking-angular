@@ -7,9 +7,10 @@ import {MatButtonModule, MatInputModule, MatToolbarModule} from '@angular/materi
 import {AppRoutingModule} from './app.router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HotelsComponent } from './hotels/hotels.component';
-import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './components/login/login.component';
+import { HotelsComponent } from './components/hotels/hotels.component';
+import { HeaderComponent } from './components/header/header.component';
+import {AlertModule, TabsModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { HeaderComponent } from './header/header.component';
     HttpModule,
     MatButtonModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    TabsModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
