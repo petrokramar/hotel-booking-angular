@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../model/country';
 import { CountriesService } from '../../service/countries.service';
+import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-countries-list',
@@ -9,7 +10,7 @@ import { CountriesService } from '../../service/countries.service';
 })
 export class CountriesListComponent implements OnInit {
 
-  countries: Country[] = [];
+  dataSource: MatTableDataSource<Country>;
   displayedColumns = ['id', 'name'];
   isLoaded = false;
 
@@ -23,11 +24,17 @@ export class CountriesListComponent implements OnInit {
   getAllCountries(): void {
     this.countriesService.getAllCountries().subscribe(
       (data: Country[]) => {
-        this.countries = data;
+        this.dataSource = new MatTableDataSource(data);
         this.isLoaded = true;
       },
       (error: any) => {
         console.log(error);
       });
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }
