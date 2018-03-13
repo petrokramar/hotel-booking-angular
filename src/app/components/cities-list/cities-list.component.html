@@ -1,3 +1,22 @@
-<p>
-  cities-list works!
-</p>
+<div>
+  <mat-table [dataSource]="cities">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let city"> {{city.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let city"> {{city.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="countryId">
+      <mat-header-cell *matHeaderCellDef> Country id </mat-header-cell>
+      <mat-cell *matCellDef="let city"> {{city.country.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="countryName">
+      <mat-header-cell *matHeaderCellDef> Country name </mat-header-cell>
+      <mat-cell *matCellDef="let city"> {{city.country.name}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
