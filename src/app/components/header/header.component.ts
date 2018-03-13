@@ -12,4 +12,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  get isAdminUser() {
+    // return this.userService.isAdminUser();
+    return true;
+  }
+
+  get isUser() {
+    // return this.userService.isUser();
+    return true;
+  }
 }

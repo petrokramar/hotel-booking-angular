@@ -3,21 +3,22 @@
     <img src="assets/img/hotel.png" class="angular-logo">
     Booking hotels
   </span>
-  <button mat-button routerLink="hotels">Hotels</button>
-  <button mat-button [mat-menu-trigger-for]="adminMenu">Admin</button>
+  <button mat-button routerLink="hotels" *ngIf="isUser">Hotels</button>
+  <button mat-button [mat-menu-trigger-for]="adminMenu" *ngIf="isAdminUser">Admin</button>
   <mat-menu #adminMenu="matMenu">
     <button mat-menu-item  routerLink="users">Users</button>
+    <button mat-menu-item  routerLink="countries">Countries</button>
   </mat-menu>
   <span class="fill-remaining-space"></span>
-  <button mat-button routerLink="login">Login</button>
-  <button mat-button (click)="onLogout()">Logout</button>
+  <button mat-button routerLink="login" *ngIf="!isUser">Login</button>
+  <button mat-button (click)="onLogout()" *ngIf="isUser">Logout</button>
 </mat-toolbar>
 
 <!--<nav class="navbar navbar-default">-->
   <!--<div class="container-fluid">-->
     <!--<div class="navbar-header">-->
       <!--<a href="https://juja.com.ua/" class="navbar-brand">-->
-        <!--<img src="assets/img/juja_logo.png" class="angular-logo">-->
+        <!--<img src="assets/img/hotel.png" class="angular-logo">-->
         <!--Booking hotels-->
       <!--</a>-->
       <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">-->

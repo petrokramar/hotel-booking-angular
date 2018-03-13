@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../model/user';
-import {AuthService} from '../../service/auth/auth.service';
+import {AuthenticationService} from '../../service/auth/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,19 +11,23 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
-    onLoginSubmit(credentials) {
-      console.log(credentials);
-  //   this.auth.login(credentials)
-  //     .map(res => res.json())
-  //     .subscribe(
-  //       response => this.auth.finishAuthentication(response.token),
-  //       error => this.errorMessage = error.json().message
-  //     );
+  onLoginSubmit(credentials) {
+    // this.auth.login(credentials).subscribe(
+    //   data => {
+    //     console.log(data);
+    //   }
+    // )
+
+    // .map(res => res.json())
+       // .subscribe(
+       //   response => this.auth.finishAuthentication(response.token),
+       //   error => this.errorMessage = error.json().message
+       // );
    }
 
    onSignupSubmit(credentials) {
@@ -34,5 +38,28 @@ export class LoginComponent implements OnInit {
   //       error => this.errorMessage = error.json().message
   //     );
    }
+
+  // login() {
+  //   this.loading = true;
+  //
+  //   this.authenticationService.login(this.model.username, this.model.password)
+  //     .subscribe(
+  //       result => {
+  //         this.loading = false;
+  //
+  //         if (result) {
+  //           this.userService.login(result);
+  //           this.navigateAfterSuccess();
+  //         } else {
+  //           this.error = 'Username or password is incorrect';
+  //         }
+  //       },
+  //       error => {
+  //         this.error = 'Username or password is incorrect';
+  //         this.loading = false;
+  //       }
+  //     );
+  // }
+
 
 }
