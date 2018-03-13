@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Country} from '../../model/country';
-import {City} from '../../model/city';
-import {CountriesService} from '../../service/countries.service';
-import {CitiesService} from '../../service/cities.service';
+import { City } from '../../model/city';
+import { CitiesService } from '../../service/cities.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-cities-list',
@@ -11,7 +10,7 @@ import {CitiesService} from '../../service/cities.service';
 })
 export class CitiesListComponent implements OnInit {
 
-  cities: City[] = [];
+  dataSource: MatTableDataSource<City>;
   displayedColumns = ['id', 'name', 'countryId', 'countryName'];
   isLoaded = false;
 
@@ -25,11 +24,17 @@ export class CitiesListComponent implements OnInit {
   getAllCities(): void {
     this.citiesService.getAllCities().subscribe(
       (data: City[]) => {
-        this.cities = data;
+        this.dataSource = new MatTableDataSource(data);
         this.isLoaded = true;
       },
       (error: any) => {
         console.log(error);
       });
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }
