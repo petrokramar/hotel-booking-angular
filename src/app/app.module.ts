@@ -18,6 +18,7 @@ import { CitiesListComponent } from './components/cities-list/cities-list.compon
 import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
 import {CountriesService} from './service/countries.service';
 import {CitiesService} from './service/cities.service';
+import {HotelsService} from './service/hotels.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {CitiesService} from './service/cities.service';
   providers: [
     AuthenticationService,
     CountriesService,
-    CitiesService
+    CitiesService,
+    HotelsService
   ],
   bootstrap: [AppComponent]
 })
