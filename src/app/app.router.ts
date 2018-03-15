@@ -6,6 +6,7 @@ import { HotelsComponent } from './components/hotels/hotels.component';
 import { UsersComponent } from './components/users/users.component';
 import {CountriesListComponent} from './components/countries-list/countries-list.component';
 import {CitiesListComponent} from './components/cities-list/cities-list.component';
+import {RoomCategoriesListComponent} from './components/room-categories-list/room-categories-list.component';
 
 const routes: Routes = [
     {
@@ -23,6 +24,10 @@ const routes: Routes = [
     {
         path: 'hotels',
         component: HotelsComponent
+    },
+    {
+        path: 'roomCategories',
+        component: RoomCategoriesListComponent
     },
     {
         path: 'users',

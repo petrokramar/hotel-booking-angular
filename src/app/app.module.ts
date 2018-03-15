@@ -19,6 +19,9 @@ import { HotelsListComponent } from './components/hotels-list/hotels-list.compon
 import {CountriesService} from './service/countries.service';
 import {CitiesService} from './service/cities.service';
 import {HotelsService} from './service/hotels.service';
+import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import {RoomCategoryService} from './service/room-category.service';
+import {RoomCategoriesListComponent} from './components/room-categories-list/room-categories-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import {HotelsService} from './service/hotels.service';
     UsersComponent,
     CountriesListComponent,
     CitiesListComponent,
-    HotelsListComponent
+    HotelsListComponent,
+    RoomsListComponent,
+    RoomCategoriesListComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,7 +54,8 @@ import {HotelsService} from './service/hotels.service';
     AuthenticationService,
     CountriesService,
     CitiesService,
-    HotelsService
+    HotelsService,
+    RoomCategoryService
   ],
   bootstrap: [AppComponent]
 })
