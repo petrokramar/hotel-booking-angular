@@ -1,3 +1,22 @@
-<p>
-  rooms-list works!
-</p>
+<div>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="hotel">
+      <mat-header-cell *matHeaderCellDef> Hotel </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.hotel.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="number">
+      <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.number}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="roomCategory">
+      <mat-header-cell *matHeaderCellDef> Room Category </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.roomCategory.name}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

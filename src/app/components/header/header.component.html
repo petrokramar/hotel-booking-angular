@@ -4,6 +4,8 @@
     Booking hotels
   </span>
   <button mat-button routerLink="hotels" *ngIf="isUser">Hotels</button>
+  <button mat-button routerLink="rooms" *ngIf="isUser">Rooms</button>
+  <button mat-button routerLink="booking" *ngIf="isUser">Booking</button>
   <button mat-button [mat-menu-trigger-for]="adminMenu" *ngIf="isAdminUser">Admin</button>
   <mat-menu #adminMenu="matMenu">
     <button mat-menu-item  routerLink="users">Users</button>

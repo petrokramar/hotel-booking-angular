@@ -22,6 +22,9 @@ import {HotelsService} from './service/hotels.service';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
 import {RoomCategoryService} from './service/room-category.service';
 import {RoomCategoriesListComponent} from './components/room-categories-list/room-categories-list.component';
+import {RoomService} from './service/room.service';
+import { BookingListComponent } from './components/booking-list/booking-list.component';
+import {BookingService} from './service/booking.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {RoomCategoriesListComponent} from './components/room-categories-list/roo
     CitiesListComponent,
     HotelsListComponent,
     RoomsListComponent,
-    RoomCategoriesListComponent
+    RoomCategoriesListComponent,
+    BookingListComponent
   ],
   imports: [
     AppRoutingModule,
@@ -52,9 +56,11 @@ import {RoomCategoriesListComponent} from './components/room-categories-list/roo
   ],
   providers: [
     AuthenticationService,
+    BookingService,
     CountriesService,
     CitiesService,
     HotelsService,
+    RoomService,
     RoomCategoryService
   ],
   bootstrap: [AppComponent]
