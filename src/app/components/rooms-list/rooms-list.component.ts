@@ -10,7 +10,7 @@ import {RoomService} from '../../service/room.service';
 export class RoomsListComponent implements OnInit {
 
   dataSource: Room[];
-  displayedColumns = ['hotel', 'id', 'number', 'roomCategory'];
+  displayedColumns = ['hotel', 'city', 'country', 'number', 'roomCategory'];
   isLoaded = false;
 
   constructor(private roomService: RoomService) { }

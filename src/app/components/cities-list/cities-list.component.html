@@ -7,15 +7,15 @@
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
       <mat-cell *matCellDef="let city"> {{city.id}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <ng-container matColumnDef="city">
+      <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
       <mat-cell *matCellDef="let city"> {{city.name}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="countryId">
       <mat-header-cell *matHeaderCellDef> Country id </mat-header-cell>
       <mat-cell *matCellDef="let city"> {{city.country.id}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="countryName">
+    <ng-container matColumnDef="country">
       <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
       <mat-cell *matCellDef="let city"> {{city.country.name}} </mat-cell>
     </ng-container>

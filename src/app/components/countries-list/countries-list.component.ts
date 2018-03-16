@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material';
 export class CountriesListComponent implements OnInit {
 
   dataSource: MatTableDataSource<Country>;
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['name'];
   isLoaded = false;
 
   constructor(private countriesService: CountriesService) { }

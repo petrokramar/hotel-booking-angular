@@ -10,7 +10,7 @@ import {BookingService} from '../../service/booking.service';
 export class BookingListComponent implements OnInit {
 
   dataSource: Booking[];
-  displayedColumns = ['id', 'user', 'country', 'city', 'hotel', 'room', 'dateBegin', 'dateEnd'];
+  displayedColumns = ['hotel', 'city', 'country', 'room', 'dateBegin', 'dateEnd', 'user'];
   isLoaded = false;
 
   constructor(private bookingService: BookingService) { }

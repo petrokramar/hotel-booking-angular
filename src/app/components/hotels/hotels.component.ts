@@ -13,7 +13,7 @@ import {HotelsService} from '../../service/hotels.service';
 export class HotelsComponent implements OnInit {
 
   dataSource: MatTableDataSource<Hotel>;
-  displayedColumns = ['id', 'name', 'cityId', 'cityName', 'countryId', 'countryName'];
+  displayedColumns = ['hotel', 'city', 'country'];
   isLoaded = false;
 
   constructor(private hotelsService: HotelsService) { }
