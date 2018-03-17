@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule, MatInputModule, MatMenuModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatMenuModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import { AppRoutingModule } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -49,6 +49,7 @@ import {BookingService} from './service/booking.service';
     MatButtonModule,
     MatInputModule,
     MatMenuModule,
+    MatTabsModule,
     MatTableModule,
     MatToolbarModule,
     TabsModule.forRoot(),

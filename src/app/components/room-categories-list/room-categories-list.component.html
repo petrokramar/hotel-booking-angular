@@ -1,5 +1,8 @@
-<div>
-  <mat-table [dataSource]="dataSource">
+<div *ngIf="!isLoaded">
+  Loading ...
+</div>
+<div *ngIf="isLoaded">
+<mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
       <mat-cell *matCellDef="let roomCategory"> {{roomCategory.id}} </mat-cell>
