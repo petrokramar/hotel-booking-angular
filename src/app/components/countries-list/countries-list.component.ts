@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Country } from '../../model/country';
 import { CountriesService } from '../../service/countries.service';
 import { MatTableDataSource } from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-countries-list',
@@ -14,7 +15,10 @@ export class CountriesListComponent implements OnInit {
   displayedColumns = ['name'];
   isLoaded = false;
 
-  constructor(private countriesService: CountriesService) { }
+  constructor(
+    private countriesService: CountriesService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.isLoaded = false;
@@ -36,5 +40,13 @@ export class CountriesListComponent implements OnInit {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
+  }
+
+  gotoCountry(id: string): void {
+    this.router.navigate(['/country', id]);
+  }
+
+  addCountry(): void {
+    this.router.navigate(['/country', '0']);
   }
 }

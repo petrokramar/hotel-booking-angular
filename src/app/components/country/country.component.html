@@ -1,0 +1,12 @@
+<button mat-button color="primary" (click)="goBack()">&#8678; Back to countries</button>
+<div *ngIf="!isLoaded">
+  Loading ...
+</div>
+<div *ngIf="isLoaded">
+  <form class="example-form" *ngIf="isLoaded" #countryForm="ngForm" (ngSubmit)="onCountrySubmit(countryForm.value)">
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="dataSource.name" name = "name" placeholder="Enter country name" ngModel required>
+    </mat-form-field>
+    <button mat-button color="primary">Submit</button>
+  </form>
+</div>

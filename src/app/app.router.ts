@@ -9,6 +9,7 @@ import {CitiesListComponent} from './components/cities-list/cities-list.componen
 import {RoomCategoriesListComponent} from './components/room-categories-list/room-categories-list.component';
 import {RoomsListComponent} from './components/rooms-list/rooms-list.component';
 import {BookingListComponent} from './components/booking-list/booking-list.component';
+import {CountryComponent} from './components/country/country.component';
 
 const routes: Routes = [
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
         path: 'cities',
         component: CitiesListComponent
+    },
+    {
+        path: 'country/:id',
+        component: CountryComponent
     },
     {
         path: 'countries',

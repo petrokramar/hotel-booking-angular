@@ -25,6 +25,7 @@ import {RoomCategoriesListComponent} from './components/room-categories-list/roo
 import {RoomService} from './service/room.service';
 import { BookingListComponent } from './components/booking-list/booking-list.component';
 import {BookingService} from './service/booking.service';
+import { CountryComponent } from './components/country/country.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {BookingService} from './service/booking.service';
     HotelsListComponent,
     RoomsListComponent,
     RoomCategoriesListComponent,
-    BookingListComponent
+    BookingListComponent,
+    CountryComponent
   ],
   imports: [
     AppRoutingModule,
