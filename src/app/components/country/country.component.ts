@@ -44,11 +44,12 @@ export class CountryComponent implements OnInit {
   }
 
   onCountrySubmit(): void {
-    this.countriesService.saveCountry(this.dataSource)
-      .subscribe(
-        () => this.goBack()
-      );
-  }
+    this.countriesService.saveCountry(this.dataSource).subscribe(
+      () => {this.goBack()},
+      (error: any) => {
+        console.log(error);
+      });
+}
 
   goBack(): void {
     this.location.back();

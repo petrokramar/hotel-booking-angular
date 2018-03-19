@@ -16,11 +16,17 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   getAllCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>(this.url);
+    return this.http.get<Country[]>(this.url)
+      .pipe(
+        catchError((error: any) => {return Observable.throw(error); })
+      );
   }
 
   getCountry(id: string): Observable<Country> {
-    return this.http.get<Country>(this.url + '/' + id);
+    return this.http.get<Country>(this.url + '/' + id)
+      .pipe(
+        catchError((error: any) => {return Observable.throw(error); })
+    );
   }
 
   saveCountry(country: Country): Observable<Country> {
