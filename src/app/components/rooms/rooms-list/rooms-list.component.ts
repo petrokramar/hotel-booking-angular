@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Room} from '../../model/room';
-import {RoomService} from '../../service/room.service';
+import {Room} from '../../../model/room';
+import {RoomService} from '../../../service/room.service';
 
 @Component({
   selector: 'app-rooms-list',

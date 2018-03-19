@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Booking} from '../../model/booking';
-import {BookingService} from '../../service/booking.service';
+import {Booking} from '../../../model/booking';
+import {BookingService} from '../../../service/booking.service';
 
 @Component({
   selector: 'app-booking-list',

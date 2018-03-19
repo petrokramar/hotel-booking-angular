@@ -8,32 +8,30 @@ import { AppRoutingModule } from './app.router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { HotelsComponent } from './components/hotels/hotels.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/common/header/header.component';
 import { AlertModule, TabsModule } from 'ngx-bootstrap';
 import { AuthenticationService } from './service/auth/authentication.service';
-import { UsersComponent } from './components/users/users.component';
-import { CountriesListComponent } from './components/countries-list/countries-list.component';
-import { CitiesListComponent } from './components/cities-list/cities-list.component';
-import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
+import { CountriesListComponent } from './components/countries/countries-list/countries-list.component';
+import { CitiesListComponent } from './components/cities/cities-list/cities-list.component';
+import { HotelsListComponent } from './components/hotels/hotels-list/hotels-list.component';
 import {CountriesService} from './service/countries.service';
 import {CitiesService} from './service/cities.service';
 import {HotelsService} from './service/hotels.service';
-import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import { RoomsListComponent } from './components/rooms/rooms-list/rooms-list.component';
 import {RoomCategoryService} from './service/room-category.service';
-import {RoomCategoriesListComponent} from './components/room-categories-list/room-categories-list.component';
+import {RoomCategoriesListComponent} from './components/room-categories/room-categories-list/room-categories-list.component';
 import {RoomService} from './service/room.service';
-import { BookingListComponent } from './components/booking-list/booking-list.component';
+import { BookingListComponent } from './components/booking/booking-list/booking-list.component';
 import {BookingService} from './service/booking.service';
-import { CountryComponent } from './components/country/country.component';
+import { CountryComponent } from './components/countries/country/country.component';
+import {UsersListComponent} from './components/users/users-list/users-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HotelsComponent,
     HeaderComponent,
-    UsersComponent,
+    UsersListComponent,
     CountriesListComponent,
     CitiesListComponent,
     HotelsListComponent,
