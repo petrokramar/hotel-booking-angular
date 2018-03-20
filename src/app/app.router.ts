@@ -10,6 +10,7 @@ import {BookingListComponent} from './components/booking/booking-list/booking-li
 import {CountryComponent} from './components/countries/country/country.component';
 import {HotelsListComponent} from './components/hotels/hotels-list/hotels-list.component';
 import {UsersListComponent} from './components/users/users-list/users-list.component';
+import {CityComponent} from './components/cities/city/city.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'booking',
         component: BookingListComponent
+    },
+    {
+        path: 'cities/:id',
+        component: CityComponent
     },
     {
         path: 'cities',

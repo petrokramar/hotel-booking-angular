@@ -1,7 +1,7 @@
 import {Country} from './country';
 
 export class City {
-  id: string;
+  id: number;
   name: string;
   country: Country;
 }

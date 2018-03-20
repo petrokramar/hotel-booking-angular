@@ -22,17 +22,17 @@ export class CountryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id === '0') {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    if (id === 0) {
       this.dataSource = new Country();
-      this.dataSource.id = id;
+      this.dataSource.id = 0;
       this.isLoaded = true;
     } else {
         this.getCountry(id);
     }
   }
 
-  getCountry(id: string): void {
+  getCountry(id: number): void {
     this.countriesService.getCountry(id).subscribe(
       (data: Country) => {
         this.dataSource = data;

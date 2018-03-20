@@ -22,7 +22,7 @@ export class CountriesService {
       );
   }
 
-  getCountry(id: string): Observable<Country> {
+  getCountry(id: number): Observable<Country> {
     return this.http.get<Country>(this.url + '/' + id)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })
@@ -30,6 +30,7 @@ export class CountriesService {
   }
 
   saveCountry(country: Country): Observable<Country> {
+
     return this.http.post<Country>(this.url, country, this.httpOptions)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })

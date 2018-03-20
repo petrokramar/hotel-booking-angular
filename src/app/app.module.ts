@@ -3,7 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule, MatInputModule, MatMenuModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatInputModule, MatMenuModule, MatOptionModule, MatSelectModule, MatTableModule, MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
 import { AppRoutingModule } from './app.router';
 
 import { AppComponent } from './app.component';
@@ -25,6 +28,7 @@ import { BookingListComponent } from './components/booking/booking-list/booking-
 import {BookingService} from './service/booking.service';
 import { CountryComponent } from './components/countries/country/country.component';
 import {UsersListComponent} from './components/users/users-list/users-list.component';
+import { CityComponent } from './components/cities/city/city.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import {UsersListComponent} from './components/users/users-list/users-list.compo
     RoomsListComponent,
     RoomCategoriesListComponent,
     BookingListComponent,
-    CountryComponent
+    CountryComponent,
+    CityComponent
   ],
   imports: [
     AppRoutingModule,
@@ -49,6 +54,8 @@ import {UsersListComponent} from './components/users/users-list/users-list.compo
     MatButtonModule,
     MatInputModule,
     MatMenuModule,
+    MatOptionModule,
+    MatSelectModule,
     MatTabsModule,
     MatTableModule,
     MatToolbarModule,
