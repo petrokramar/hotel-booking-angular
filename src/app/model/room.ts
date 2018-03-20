@@ -4,7 +4,7 @@ import {RoomCategory} from './roomCategory';
 import {Hotel} from './hotel';
 
 export class Room {
-  id: string;
+  id: number;
   number: string;
   hotel: Hotel;
   roomCategory: RoomCategory;

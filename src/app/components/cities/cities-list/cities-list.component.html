@@ -25,4 +25,5 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoCity(row.id)"></mat-row>
   </mat-table>
+  <button mat-button color="primary" (click)="addCity()">Add city</button>
 </div>

@@ -1,5 +1,5 @@
 export class RoomCategory {
-  id: string;
+  id: number;
   name: string;
   description: String;
 }

@@ -28,16 +28,19 @@ export class CityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id === '0') {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+    if (id === 0) {
       this.dataSource = new City();
+      this.dataSource.id = 0;
+      this.countryId = id;
+      this.getCountries();
       this.isLoaded = true;
     } else {
       this.getCity(id);
     }
   }
 
-  getCity(id: string): void {
+  getCity(id: number): void {
     this.citiesService.getCity(id).subscribe(
       (data: City) => {
         this.dataSource = data;

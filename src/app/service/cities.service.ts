@@ -20,7 +20,7 @@ export class CitiesService {
     return this.http.get<City[]>(this.url);
   }
 
-  getCity(id: string): Observable<City> {
+  getCity(id: number): Observable<City> {
     return this.http.get<City>(this.url + '/' + id)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })

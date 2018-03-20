@@ -8,7 +8,7 @@
       <input matInput [(ngModel)]="dataSource.name" name = "name" placeholder="Enter city name" ngModel required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <mat-select [(ngModel)]="countryId" name="countryId" placeholder="Country" [(value)]="dataSource.country.id">
+      <mat-select [(ngModel)]="countryId" name="countryId" placeholder="Select country" [(value)]="countryId" required>
         <mat-option *ngFor="let country of countries" [value]="country.id">
           {{ country.name }}
         </mat-option>

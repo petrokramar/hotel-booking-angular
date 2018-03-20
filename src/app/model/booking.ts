@@ -2,7 +2,7 @@ import {User} from './user';
 import {Room} from './room';
 
 export class Booking {
-  id: string;
+  id: number;
   user: User;
   room: Room;
   dateBegin: string;

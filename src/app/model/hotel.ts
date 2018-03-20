@@ -2,7 +2,7 @@ import {Country} from './country';
 import {City} from './city';
 
 export class Hotel {
-  id: string;
+  id: number;
   name: string;
   city: City;
 }
