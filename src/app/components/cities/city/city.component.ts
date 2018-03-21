@@ -34,7 +34,6 @@ export class CityComponent implements OnInit {
       this.dataSource.id = 0;
       this.countryId = id;
       this.getCountries();
-      this.isLoaded = true;
     } else {
       this.getCity(id);
     }

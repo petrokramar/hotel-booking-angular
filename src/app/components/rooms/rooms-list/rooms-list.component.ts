@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Room} from '../../../model/room';
 import {RoomService} from '../../../service/room/room.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-rooms-list',
@@ -13,7 +14,10 @@ export class RoomsListComponent implements OnInit {
   displayedColumns = ['hotel', 'city', 'country', 'number', 'roomCategory'];
   isLoaded = false;
 
-  constructor(private roomService: RoomService) { }
+  constructor(
+    private roomService: RoomService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.isLoaded = false;
@@ -30,4 +34,13 @@ export class RoomsListComponent implements OnInit {
         console.log(error);
       });
   }
+
+  gotoRoom(id: number): void {
+    this.router.navigate(['/rooms', id]);
+  }
+
+  addRoom(): void {
+    this.router.navigate(['/rooms', '0']);
+  }
+
 }
