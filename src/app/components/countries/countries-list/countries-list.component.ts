@@ -43,7 +43,7 @@ export class CountriesListComponent implements OnInit {
   }
 
   gotoCountry(id: string): void {
-    this.router.navigate(['/country', id]);
+    this.router.navigate(['/countries', id]);
   }
 
   addCountry(): void {

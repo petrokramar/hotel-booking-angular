@@ -10,7 +10,7 @@ import {RoomCategoryService} from '../../../service/room-category/room-category.
 export class RoomCategoriesListComponent implements OnInit {
 
   dataSource: RoomCategory[];
-  displayedColumns = ['id', 'name', 'description'];
+  displayedColumns = ['name', 'description'];
   isLoaded = false;
 
   constructor(private roomCategoryService: RoomCategoryService) { }
