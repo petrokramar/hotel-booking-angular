@@ -12,6 +12,7 @@ import {HotelsListComponent} from './components/hotels/hotels-list/hotels-list.c
 import {UsersListComponent} from './components/users/users-list/users-list.component';
 import {CityComponent} from './components/cities/city/city.component';
 import {HotelComponent} from './components/hotels/hotel/hotel.component';
+import {RoomCategoryComponent} from './components/room-categories/room-category/room-category.component';
 
 const routes: Routes = [
     {
@@ -57,6 +58,10 @@ const routes: Routes = [
     {
         path: 'roomCategories',
         component: RoomCategoriesListComponent
+    },
+    {
+        path: 'roomCategories/:id',
+        component: RoomCategoryComponent
     },
     {
         path: 'users',

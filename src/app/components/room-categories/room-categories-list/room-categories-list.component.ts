@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RoomCategory} from '../../../model/roomCategory';
 import {RoomCategoryService} from '../../../service/room-category/room-category.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-room-categories-list',
@@ -13,7 +14,10 @@ export class RoomCategoriesListComponent implements OnInit {
   displayedColumns = ['name', 'description'];
   isLoaded = false;
 
-  constructor(private roomCategoryService: RoomCategoryService) { }
+  constructor(
+    private roomCategoryService: RoomCategoryService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.isLoaded = false;
@@ -30,4 +34,13 @@ export class RoomCategoriesListComponent implements OnInit {
         console.log(error);
       });
   }
+
+  gotoRoomCategory(id: string): void {
+    this.router.navigate(['/roomCategories', id]);
+  }
+
+  addRoomCategory(): void {
+    this.router.navigate(['/roomCategories', '0']);
+  }
+
 }

@@ -19,6 +19,7 @@
       <mat-cell *matCellDef="let roomCategory"> {{roomCategory.description}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoRoomCategory(row.id)"></mat-row>
   </mat-table>
+  <button mat-button color="primary" (click)="addRoomCategory()">Add room category</button>
 </div>

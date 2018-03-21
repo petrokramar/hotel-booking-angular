@@ -30,6 +30,7 @@ import { CountryComponent } from './components/countries/country/country.compone
 import {UsersListComponent} from './components/users/users-list/users-list.component';
 import { CityComponent } from './components/cities/city/city.component';
 import { HotelComponent } from './components/hotels/hotel/hotel.component';
+import { RoomCategoryComponent } from './components/room-categories/room-category/room-category.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HotelComponent } from './components/hotels/hotel/hotel.component';
     BookingListComponent,
     CountryComponent,
     CityComponent,
-    HotelComponent
+    HotelComponent,
+    RoomCategoryComponent
   ],
   imports: [
     AppRoutingModule,
