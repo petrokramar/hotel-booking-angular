@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {Hotel} from '../../../model/hotel';
-import {HotelsService} from '../../../service/hotels.service';
+import {HotelsService} from '../../../service/hotels/hotels.service';
 import {Router} from '@angular/router';
 
 @Component({

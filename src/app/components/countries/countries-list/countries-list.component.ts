@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../../model/country';
-import { CountriesService } from '../../../service/countries.service';
+import { CountriesService } from '../../../service/countries/countries.service';
 import { MatTableDataSource } from '@angular/material';
 import {Router} from '@angular/router';
 

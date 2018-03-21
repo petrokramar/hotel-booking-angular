@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { City } from '../model/city';
+import { City } from '../../model/city';
 import {catchError} from 'rxjs/operators';
-import {CityRequest} from '../model/request/cityRequest';
+import {CityRequest} from '../../model/request/cityRequest';
 
 @Injectable()
 export class CitiesService {

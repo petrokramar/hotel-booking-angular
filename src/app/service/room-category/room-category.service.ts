@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient} from '@angular/common/http';
-import {RoomCategory} from '../model/roomCategory';
+import {RoomCategory} from '../../model/roomCategory';
 
 @Injectable()
 export class RoomCategoryService {

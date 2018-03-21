@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from '../../../model/city';
-import { CitiesService } from '../../../service/cities.service';
+import { CitiesService } from '../../../service/cities/cities.service';
 import { MatTableDataSource } from '@angular/material';
 import {Router} from '@angular/router';
 
