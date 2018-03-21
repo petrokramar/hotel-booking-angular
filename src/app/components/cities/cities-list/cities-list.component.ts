@@ -42,7 +42,7 @@ export class CitiesListComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  gotoCity(id: string): void {
+  gotoCity(id: number): void {
     this.router.navigate(['/cities', id]);
   }
 

@@ -33,5 +33,4 @@ export class CitiesService {
         catchError((error: any) => {return Observable.throw(error); })
       );
   }
-
 }

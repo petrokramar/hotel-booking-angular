@@ -31,6 +31,7 @@
       <mat-cell *matCellDef="let hotel"> {{hotel.city.country.name}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoHotel(row.id)"></mat-row>
   </mat-table>
+  <button mat-button color="primary" (click)="addHotel()">Add hotel</button>
 </div>

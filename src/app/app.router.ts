@@ -11,6 +11,7 @@ import {CountryComponent} from './components/countries/country/country.component
 import {HotelsListComponent} from './components/hotels/hotels-list/hotels-list.component';
 import {UsersListComponent} from './components/users/users-list/users-list.component';
 import {CityComponent} from './components/cities/city/city.component';
+import {HotelComponent} from './components/hotels/hotel/hotel.component';
 
 const routes: Routes = [
     {
@@ -22,15 +23,15 @@ const routes: Routes = [
         component: BookingListComponent
     },
     {
-        path: 'cities/:id',
-        component: CityComponent
-    },
-    {
         path: 'cities',
         component: CitiesListComponent
     },
     {
-        path: 'country/:id',
+        path: 'cities/:id',
+        component: CityComponent
+    },
+    {
+        path: 'countries/:id',
         component: CountryComponent
     },
     {
@@ -38,8 +39,16 @@ const routes: Routes = [
         component: CountriesListComponent
     },
     {
+        path: 'countries/:id',
+        component: CountryComponent
+    },
+    {
         path: 'hotels',
         component: HotelsListComponent
+    },
+    {
+        path: 'hotels/:id',
+        component: HotelComponent
     },
     {
         path: 'rooms',

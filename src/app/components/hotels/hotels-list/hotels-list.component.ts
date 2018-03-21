@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 import {Hotel} from '../../../model/hotel';
 import {HotelsService} from '../../../service/hotels.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-hotels-list',
@@ -14,7 +15,9 @@ export class HotelsListComponent implements OnInit {
   displayedColumns = ['hotel', 'city', 'country'];
   isLoaded = false;
 
-  constructor(private hotelsService: HotelsService) { }
+  constructor(
+    private hotelsService: HotelsService,
+    private router: Router) { }
 
   ngOnInit() {
     this.isLoaded = false;
@@ -30,6 +33,14 @@ export class HotelsListComponent implements OnInit {
       (error: any) => {
         console.log(error);
       });
+  }
+
+  gotoHotel(id: number): void {
+    this.router.navigate(['/hotels', id]);
+  }
+
+  addHotel(): void {
+    this.router.navigate(['/hotels', '0']);
   }
 
   applyFilter(filterValue: string) {
