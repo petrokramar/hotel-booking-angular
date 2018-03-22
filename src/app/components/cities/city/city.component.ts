@@ -28,6 +28,7 @@ export class CityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLoaded = false;
     const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     if (id === 0) {
       this.dataSource = new City();

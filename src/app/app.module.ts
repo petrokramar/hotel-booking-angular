@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
-  MatButtonModule, MatInputModule, MatMenuModule, MatOptionModule, MatSelectModule, MatTableModule, MatTabsModule,
+  MatButtonModule, MatCheckboxModule, MatInputModule, MatMenuModule, MatOptionModule, MatSelectModule, MatTableModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.router';
@@ -32,6 +32,7 @@ import { CityComponent } from './components/cities/city/city.component';
 import { HotelComponent } from './components/hotels/hotel/hotel.component';
 import { RoomCategoryComponent } from './components/room-categories/room-category/room-category.component';
 import { RoomComponent } from './components/rooms/room/room.component';
+import {UsersService} from './service/users/users.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { RoomComponent } from './components/rooms/room/room.component';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatInputModule,
     MatMenuModule,
     MatOptionModule,
@@ -75,7 +77,8 @@ import { RoomComponent } from './components/rooms/room/room.component';
     CitiesService,
     HotelsService,
     RoomService,
-    RoomCategoryService
+    RoomCategoryService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

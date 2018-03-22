@@ -3,7 +3,8 @@
     <img src="assets/img/hotel.png" class="angular-logo">
     Booking hotels
   </span>
-  <button mat-button routerLink="booking" *ngIf="isUser">Booking</button>
+  <button mat-button routerLink="booking" *ngIf="isUser">Find room</button>
+  <button mat-button routerLink="booking" *ngIf="isUser">Booked rooms</button>
   <button mat-button [mat-menu-trigger-for]="managerMenu" *ngIf="isAdminUser">Manager</button>
   <mat-menu #managerMenu="matMenu">
     <button mat-menu-item routerLink="countries">Countries</button>
