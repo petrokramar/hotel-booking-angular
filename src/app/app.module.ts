@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
-  MatButtonModule, MatCheckboxModule, MatInputModule, MatMenuModule, MatOptionModule, MatSelectModule, MatTableModule, MatTabsModule,
+  MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatInputModule, MatMenuModule, MatNativeDateModule, MatOptionModule,
+  MatSelectModule, MatTableModule,
+  MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import { AppRoutingModule } from './app.router';
@@ -34,6 +36,7 @@ import { RoomCategoryComponent } from './components/room-categories/room-categor
 import { RoomComponent } from './components/rooms/room/room.component';
 import {UsersService} from './service/users/users.service';
 import { UserComponent } from './components/users/user/user.component';
+import { FindingRoomComponent } from './components/finding-room/finding-room.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { UserComponent } from './components/users/user/user.component';
     HotelComponent,
     RoomCategoryComponent,
     RoomComponent,
-    UserComponent
+    UserComponent,
+    FindingRoomComponent
   ],
   imports: [
     AppRoutingModule,
@@ -62,6 +66,8 @@ import { UserComponent } from './components/users/user/user.component';
     HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatInputModule,
     MatMenuModule,
     MatOptionModule,

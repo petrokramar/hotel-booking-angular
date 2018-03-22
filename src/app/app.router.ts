@@ -15,6 +15,7 @@ import {HotelComponent} from './components/hotels/hotel/hotel.component';
 import {RoomCategoryComponent} from './components/room-categories/room-category/room-category.component';
 import {RoomComponent} from './components/rooms/room/room.component';
 import {UserComponent} from './components/users/user/user.component';
+import {FindingRoomComponent} from './components/finding-room/finding-room.component';
 
 const routes: Routes = [
     {
@@ -44,6 +45,10 @@ const routes: Routes = [
     {
         path: 'countries/:id',
         component: CountryComponent
+    },
+    {
+        path: 'findingRoom',
+        component: FindingRoomComponent
     },
     {
         path: 'hotels',
