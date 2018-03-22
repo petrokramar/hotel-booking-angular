@@ -23,7 +23,6 @@ export class CityComponent implements OnInit {
     private citiesService: CitiesService,
     private countriesService: CountriesService,
     private route: ActivatedRoute,
-    private router: Router,
     private location: Location
   ) { }
 

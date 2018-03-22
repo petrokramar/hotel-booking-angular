@@ -34,4 +34,8 @@ export class UsersListComponent implements OnInit {
         console.log(error);
       });
   }
+
+  gotoUser(username: string): void {
+    this.router.navigate(['/users', username]);
+  }
 }

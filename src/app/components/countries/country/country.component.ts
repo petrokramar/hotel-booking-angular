@@ -17,7 +17,6 @@ export class CountryComponent implements OnInit {
   constructor(
     private countriesService: CountriesService,
     private route: ActivatedRoute,
-    private router: Router,
     private location: Location
   ) { }
 

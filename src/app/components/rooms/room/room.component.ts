@@ -33,7 +33,6 @@ export class RoomComponent implements OnInit {
     private hotelService: HotelsService,
     private roomCategoryService: RoomCategoryService,
     private route: ActivatedRoute,
-    private router: Router,
     private location: Location
   ) { }
 

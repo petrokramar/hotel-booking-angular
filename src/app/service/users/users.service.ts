@@ -22,4 +22,11 @@ export class UsersService {
       );
   }
 
+  getUser(username: string): Observable<User> {
+    return this.http.get<User>(this.url + '/' + username)
+      .pipe(
+        catchError((error: any) => {return Observable.throw(error); })
+      );
+  }
+
 }

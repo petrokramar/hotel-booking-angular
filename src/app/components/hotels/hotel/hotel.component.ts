@@ -26,7 +26,6 @@ export class HotelComponent implements OnInit {
     private hotelsService: HotelsService,
     private citiesService: CitiesService,
     private route: ActivatedRoute,
-    private router: Router,
     private location: Location
   ) { }
 

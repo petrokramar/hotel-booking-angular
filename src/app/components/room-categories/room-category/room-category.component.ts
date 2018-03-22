@@ -17,7 +17,6 @@ export class RoomCategoryComponent implements OnInit {
   constructor(
     private roomCategoryService: RoomCategoryService,
     private route: ActivatedRoute,
-    private router: Router,
     private location: Location
   ) { }
 

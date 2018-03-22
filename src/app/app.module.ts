@@ -33,6 +33,7 @@ import { HotelComponent } from './components/hotels/hotel/hotel.component';
 import { RoomCategoryComponent } from './components/room-categories/room-category/room-category.component';
 import { RoomComponent } from './components/rooms/room/room.component';
 import {UsersService} from './service/users/users.service';
+import { UserComponent } from './components/users/user/user.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {UsersService} from './service/users/users.service';
     CityComponent,
     HotelComponent,
     RoomCategoryComponent,
-    RoomComponent
+    RoomComponent,
+    UserComponent
   ],
   imports: [
     AppRoutingModule,
