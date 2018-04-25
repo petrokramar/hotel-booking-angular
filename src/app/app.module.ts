@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatInputModule, MatMenuModule, MatNativeDateModule, MatOptionModule,
-  MatSelectModule, MatTableModule,
+  MatPaginatorModule, MatProgressSpinnerModule,
+  MatSelectModule, MatSortModule, MatTableModule,
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -71,7 +72,10 @@ import { FindingRoomComponent } from './components/finding-room/finding-room.com
     MatInputModule,
     MatMenuModule,
     MatOptionModule,
+    MatPaginatorModule,
     MatSelectModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
     MatTabsModule,
     MatTableModule,
     MatToolbarModule,

@@ -5,10 +5,19 @@
   Loading ...
 </div>
 <div *ngIf="isLoaded">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-  <mat-table [dataSource]="dataSource">
+  <!--<mat-form-field>-->
+    <!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">-->
+  <!--</mat-form-field>-->
+
+  <mat-input-container>
+    <input matInput placeholder="Search countries" #input>
+  </mat-input-container>
+
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <mat-table [dataSource]="dataSource" matSort matSortActive="name" matSortDirection="asc" matSortDisableClear>
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
       <mat-cell *matCellDef="let country"> {{country.id}} </mat-cell>
@@ -20,5 +29,19 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoCountry(row.id)"></mat-row>
   </mat-table>
+  <mat-paginator [length]="totalCountries" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let country"> {{country.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+        <mat-cell *matCellDef="let country"> {{country.name}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoCountry(row.id)"></mat-row>
+    </mat-table>
+  </mat-paginator>
   <button mat-button color="primary" (click)="addCountry()">Add country</button>
 </div>

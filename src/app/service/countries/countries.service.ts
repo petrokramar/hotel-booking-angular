@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Country } from '../../model/country';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 
 @Injectable()
@@ -17,6 +17,19 @@ export class CountriesService {
 
   getAllCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.url)
+      .pipe(
+        catchError((error: any) => {return Observable.throw(error); })
+      );
+  }
+
+  findCountries(filter: string, sortOrder: string, pageIndex: number, pageSize: number): Observable<Country[]> {
+    return this.http.get<Country[]>(this.url, {
+      params: new HttpParams()
+        // .set('filter', filter)
+        // .set('sortOrder', sortOrder)
+        .set('page', pageIndex.toString())
+        .set('size', pageSize.toString())
+    })
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })
       );
