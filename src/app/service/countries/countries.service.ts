@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Country } from '../../model/country';
+import { Country } from '../../model/entity/country';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
+import {CountryListDTO} from '../../model/dto/countryListDTO';
 
 @Injectable()
 export class CountriesService {
@@ -22,10 +23,10 @@ export class CountriesService {
       );
   }
 
-  findCountries(filter: string, sortOrder: string, pageIndex: number, pageSize: number): Observable<Country[]> {
-    return this.http.get<Country[]>(this.url, {
+  findCountries(filter: string, sortOrder: string, pageIndex: number, pageSize: number): Observable<CountryListDTO> {
+    return this.http.get<CountryListDTO>(this.url, {
       params: new HttpParams()
-        // .set('filter', filter)
+        .set('filter', filter)
         // .set('sortOrder', sortOrder)
         .set('page', pageIndex.toString())
         .set('size', pageSize.toString())

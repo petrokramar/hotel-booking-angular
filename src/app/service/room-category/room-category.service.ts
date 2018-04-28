@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {RoomCategory} from '../../model/roomCategory';
+import {RoomCategory} from '../../model/entity/roomCategory';
 import {catchError} from 'rxjs/operators';
-import {Country} from '../../model/country';
+import {Country} from '../../model/entity/country';
 
 @Injectable()
 export class RoomCategoryService {

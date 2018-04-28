@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Room} from '../../model/room';
-import {City} from '../../model/city';
+import {Room} from '../../model/entity/room';
+import {City} from '../../model/entity/city';
 import {catchError} from 'rxjs/operators';
 import {CityRequest} from '../../model/request/cityRequest';
 import {RoomRequest} from '../../model/request/roomRequest';

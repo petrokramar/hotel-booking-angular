@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { Country} from '../../../model/country';
+import { Country} from '../../../model/entity/country';
 import { CountriesService} from '../../../service/countries/countries.service';
 import {Location} from '@angular/common';
 

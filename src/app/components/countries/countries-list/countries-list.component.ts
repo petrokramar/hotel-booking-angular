@@ -2,10 +2,11 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import { CountriesService } from '../../../service/countries/countries.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
-import {CountriesDataSource} from '../../../service/countries/countries.datasource';
 import {fromEvent} from 'rxjs/observable/fromEvent';
 import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
 import {merge} from 'rxjs/observable/merge';
+import {Country} from '../../../model/entity/country';
+import {CountryListDTO} from '../../../model/dto/countryListDTO';
 
 @Component({
   selector: 'app-countries-list',
@@ -14,10 +15,9 @@ import {merge} from 'rxjs/observable/merge';
 })
 export class CountriesListComponent implements OnInit, AfterViewInit {
 
-//  dataSource: MatTableDataSource<Country>;
-  dataSource: CountriesDataSource;
+ dataSource: MatTableDataSource<Country>;
   displayedColumns = ['name'];
-  totalCountries = 30;
+  totalCountries: number;
   isLoaded = false;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,21 +31,13 @@ export class CountriesListComponent implements OnInit, AfterViewInit {
     private router: Router
   ) { }
 
-  // ngOnInit() {
-  //   this.isLoaded = false;
-  //   this.getAllCountries();
-  // }
-
   ngOnInit() {
-
     this.isLoaded = false;
-
-    this.dataSource = new CountriesDataSource(this.countriesService);
-
-    this.dataSource.loadCountries('', 'asc', 0, 10);
-
-    this.isLoaded = true;
-
+    this.input.nativeElement.value = '';
+    this.sort.direction = 'asc';
+    this.paginator.pageIndex = 0;
+    this.paginator.pageSize = 10;
+    this.findCountries();
   }
 
   ngAfterViewInit() {
@@ -58,44 +50,34 @@ export class CountriesListComponent implements OnInit, AfterViewInit {
         distinctUntilChanged(),
         tap(() => {
           this.paginator.pageIndex = 0;
-
-          this.loadLessonsPage();
+          this.findCountries(
+            );
         })
       )
       .subscribe();
 
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(
-        tap(() => this.loadLessonsPage())
-      )
+        tap(() => this.findCountries()
+      ))
       .subscribe();
 
   }
 
-  loadLessonsPage() {
-    this.dataSource.loadCountries(
-      this.input.nativeElement.value,
-      this.sort.direction,
-      this.paginator.pageIndex,
-      this.paginator.pageSize);
-  }
-
-
-  // getAllCountries(): void {
-  //      this.countriesService.getAllCountries().subscribe(
-  //     (data: Country[]) => {
-  //       this.dataSource = new MatTableDataSource(data);
-  //       this.isLoaded = true;
-  //     },
-  //     (error: any) => {
-  //       console.log(error);
-  //     });
-  // }
-
-  applyFilter(filterValue: string) {
-    // filterValue = filterValue.trim();
-    // filterValue = filterValue.toLowerCase();
-    // this.dataSource.filter = filterValue;
+  findCountries(): void {
+        this.countriesService.findCountries(
+          this.input.nativeElement.value,
+          this.sort.direction,
+          this.paginator.pageIndex,
+          this.paginator.pageSize).subscribe(
+      (data: CountryListDTO) => {
+        this.dataSource = new MatTableDataSource(data.countries);
+        this.totalCountries = data.totalElements;
+        this.isLoaded = true;
+      },
+      (error: any) => {
+        console.log(error);
+      });
   }
 
   gotoCountry(id: string): void {
@@ -106,4 +88,3 @@ export class CountriesListComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/countries', '0']);
   }
 }
-

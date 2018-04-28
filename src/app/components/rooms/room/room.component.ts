@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {City} from '../../../model/city';
-import {Country} from '../../../model/country';
+import {City} from '../../../model/entity/city';
+import {Country} from '../../../model/entity/country';
 import {Location} from '@angular/common';
 import {CitiesService} from '../../../service/cities/cities.service';
 import {CountriesService} from '../../../service/countries/countries.service';
 import {CityRequest} from '../../../model/request/cityRequest';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Room} from '../../../model/room';
-import {RoomCategory} from '../../../model/roomCategory';
+import {Room} from '../../../model/entity/room';
+import {RoomCategory} from '../../../model/entity/roomCategory';
 import {RoomService} from '../../../service/room/room.service';
 import {RoomCategoryService} from '../../../service/room-category/room-category.service';
-import {Hotel} from '../../../model/hotel';
+import {Hotel} from '../../../model/entity/hotel';
 import {HotelsService} from '../../../service/hotels/hotels.service';
 import {RoomRequest} from '../../../model/request/roomRequest';
 

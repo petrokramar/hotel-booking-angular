@@ -1,19 +1,12 @@
 <div class="header">
   <h1>Countries</h1>
 </div>
-<div *ngIf="!isLoaded">
-  Loading ...
-</div>
-<div *ngIf="isLoaded">
-  <!--<mat-form-field>-->
-    <!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">-->
-  <!--</mat-form-field>-->
-
+<div>
   <mat-input-container>
     <input matInput placeholder="Search countries" #input>
   </mat-input-container>
 
-  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+  <div class="spinner-container" *ngIf="!isLoaded">
     <mat-spinner></mat-spinner>
   </div>
 

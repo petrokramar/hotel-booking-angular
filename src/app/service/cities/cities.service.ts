@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { City } from '../../model/city';
+import { City } from '../../model/entity/city';
 import {catchError} from 'rxjs/operators';
 import {CityRequest} from '../../model/request/cityRequest';
 
