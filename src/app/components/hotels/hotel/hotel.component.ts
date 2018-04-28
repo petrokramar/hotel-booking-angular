@@ -20,6 +20,8 @@ export class HotelComponent implements OnInit {
   dataSource: Hotel;
   cities: City[];
   cityId: number;
+  hotelCategories = ['ONE_STAR', 'TWO_STARS', 'THREE_STARS', 'FOUR_STARS', 'FIVE_STARS'];
+  hotelCategory: string;
   isLoaded = false;
 
   constructor(
@@ -40,6 +42,7 @@ export class HotelComponent implements OnInit {
       this.isLoaded = true;
     } else {
       this.getHotel(id);
+      // this.hotelCategory = this.dataSource.category;
     }
   }
 
@@ -48,7 +51,9 @@ export class HotelComponent implements OnInit {
       (data: Hotel) => {
         this.dataSource = data;
         this.cityId = this.dataSource.city.id;
+        this.hotelCategory = this.dataSource.category;
         this.getCities();
+        console.log(this.hotelCategory);
       },
       (error: any) => {
         console.log(error);
@@ -71,6 +76,7 @@ export class HotelComponent implements OnInit {
     hotelRequest.id = this.dataSource.id;
     hotelRequest.name = this.dataSource.name;
     hotelRequest.cityId = this.cityId;
+    hotelRequest.category = this.hotelCategory;
     this.hotelsService.saveHotel(hotelRequest).subscribe(
       () => {
         this.goBack()

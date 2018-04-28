@@ -5,4 +5,5 @@ export class Hotel {
   id: number;
   name: string;
   city: City;
+  category: string;
 }

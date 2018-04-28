@@ -19,6 +19,13 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-select [(ngModel)]="hotelCategory" name="hotelCategory" placeholder="Select hotel category" [(value)]="hotelCategory" required>
+        <mat-option *ngFor="let hotelCategory of hotelCategories" [value]="hotelCategory">
+          {{ hotelCategory }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <button mat-button color="primary">Submit</button>
   </form>
 </div>
