@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { City } from '../../../model/entity/city';
 import { CitiesService } from '../../../service/cities/cities.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
@@ -14,7 +14,7 @@ import {CityListDTO} from '../../../model/dto/cityListDTO';
   templateUrl: './cities-list.component.html',
   styleUrls: ['./cities-list.component.css']
 })
-export class CitiesListComponent implements OnInit {
+export class CitiesListComponent implements OnInit, AfterViewInit {
 
   dataSource: MatTableDataSource<City>;
   displayedColumns = ['city', 'country'];
