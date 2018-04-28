@@ -27,7 +27,7 @@ export class CountriesService {
     return this.http.get<CountryListDTO>(this.url, {
       params: new HttpParams()
         .set('filter', filter)
-        // .set('sortOrder', sortOrder)
+        .set('sortOrder', sortOrder)
         .set('page', pageIndex.toString())
         .set('size', pageSize.toString())
     })
