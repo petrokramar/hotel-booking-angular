@@ -15,7 +15,7 @@ import {CountryListDTO} from '../../../model/dto/countryListDTO';
 })
 export class CountriesListComponent implements OnInit, AfterViewInit {
 
- dataSource: MatTableDataSource<Country>;
+  dataSource: MatTableDataSource<Country>;
   displayedColumns = ['name'];
   totalCountries: number;
   isLoaded = false;

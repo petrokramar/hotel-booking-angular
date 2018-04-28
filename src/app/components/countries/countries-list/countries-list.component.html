@@ -23,18 +23,6 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoCountry(row.id)"></mat-row>
   </mat-table>
   <mat-paginator [length]="totalCountries" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-    <mat-table [dataSource]="dataSource">
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
-        <mat-cell *matCellDef="let country"> {{country.id}} </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
-        <mat-cell *matCellDef="let country"> {{country.name}} </mat-cell>
-      </ng-container>
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="gotoCountry(row.id)"></mat-row>
-    </mat-table>
   </mat-paginator>
   <button mat-button color="primary" (click)="addCountry()">Add country</button>
 </div>
