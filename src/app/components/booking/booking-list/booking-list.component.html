@@ -30,13 +30,13 @@
       <mat-header-cell *matHeaderCellDef> Room </mat-header-cell>
       <mat-cell *matCellDef="let booking"> {{booking.room.number}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="dateBegin">
-      <mat-header-cell *matHeaderCellDef> Begin </mat-header-cell>
-      <mat-cell *matCellDef="let booking"> {{booking.dateBegin}} </mat-cell>
+    <ng-container matColumnDef="checkIn">
+      <mat-header-cell *matHeaderCellDef> Check-in </mat-header-cell>
+      <mat-cell *matCellDef="let booking"> {{booking.checkIn}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="dateEnd">
-      <mat-header-cell *matHeaderCellDef> End </mat-header-cell>
-      <mat-cell *matCellDef="let booking"> {{booking.dateEnd}} </mat-cell>
+    <ng-container matColumnDef="checkOut">
+      <mat-header-cell *matHeaderCellDef> Check-out </mat-header-cell>
+      <mat-cell *matCellDef="let booking"> {{booking.checkOut}} </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

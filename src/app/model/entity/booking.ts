@@ -5,6 +5,6 @@ export class Booking {
   id: number;
   user: User;
   room: Room;
-  dateBegin: string;
-  dateEnd: string
+  checkIn: string;
+  checkOut: string
 }
