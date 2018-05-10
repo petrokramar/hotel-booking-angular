@@ -27,6 +27,12 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="dataSource.price" name = "price" placeholder="Enter price" ngModel required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="dataSource.persons" name = "persons" placeholder="Enter max number of persons" ngModel required>
+    </mat-form-field>
     <button mat-button color="primary">Submit</button>
   </form>
 </div>

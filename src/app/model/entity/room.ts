@@ -8,4 +8,6 @@ export class Room {
   number: number;
   hotel: Hotel;
   roomCategory: RoomCategory;
+  price: number;
+  persons: number;
 }

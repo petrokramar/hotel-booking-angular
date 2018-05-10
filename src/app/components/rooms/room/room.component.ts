@@ -91,6 +91,8 @@ export class RoomComponent implements OnInit {
     roomRequest.number = this.dataSource.number;
     roomRequest.hotelId = this.hotelId;
     roomRequest.roomCategoryId = this.roomCategoryId;
+    roomRequest.price = this.dataSource.price;
+    roomRequest.persons = this.dataSource.persons;
     this.roomService.saveRoom(roomRequest).subscribe(
       () => {
         this.goBack()

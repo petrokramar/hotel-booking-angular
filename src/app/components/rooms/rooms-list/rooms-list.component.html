@@ -30,6 +30,14 @@
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
       <mat-cell *matCellDef="let room"> {{room.id}} </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.price}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="persons">
+      <mat-header-cell *matHeaderCellDef> Persons </mat-header-cell>
+      <mat-cell *matCellDef="let room"> {{room.persons}} </mat-cell>
+    </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="gotoRoom(row.id)"></mat-row>
   </mat-table>

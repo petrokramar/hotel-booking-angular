@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class RoomsListComponent implements OnInit {
 
   dataSource: Room[];
-  displayedColumns = ['hotel', 'city', 'country', 'number', 'roomCategory'];
+  displayedColumns = ['hotel', 'city', 'country', 'number', 'roomCategory', 'price', 'persons'];
   isLoaded = false;
 
   constructor(

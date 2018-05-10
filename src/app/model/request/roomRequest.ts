@@ -3,4 +3,6 @@ export class RoomRequest {
   number: number;
   hotelId: number;
   roomCategoryId: number;
+  price: number;
+  persons: number;
 }
