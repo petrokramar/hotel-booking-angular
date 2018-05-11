@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
+  MatAutocompleteModule,
   MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatInputModule, MatMenuModule, MatNativeDateModule, MatOptionModule,
   MatPaginatorModule, MatProgressSpinnerModule,
   MatSelectModule, MatSortModule, MatTableModule,
@@ -65,6 +66,7 @@ import { FindingRoomComponent } from './components/finding-room/finding-room.com
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -79,6 +81,7 @@ import { FindingRoomComponent } from './components/finding-room/finding-room.com
     MatTabsModule,
     MatTableModule,
     MatToolbarModule,
+    ReactiveFormsModule,
     TabsModule.forRoot(),
     AlertModule.forRoot()
   ],

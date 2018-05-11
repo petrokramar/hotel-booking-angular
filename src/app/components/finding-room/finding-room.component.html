@@ -1,19 +1,22 @@
-<mat-form-field>
-  <input matInput [matDatepicker]="dateBegin" placeholder="Choose begin date">
-  <mat-datepicker-toggle matSuffix [for]="dateBegin"></mat-datepicker-toggle>
-  <mat-datepicker #dateBegin></mat-datepicker>
-</mat-form-field>
-<mat-form-field>
-  <input matInput [matDatepicker]="dateEnd" placeholder="Choose end date">
-  <mat-datepicker-toggle matSuffix [for]="dateEnd"></mat-datepicker-toggle>
-  <mat-datepicker #dateEnd></mat-datepicker>
-</mat-form-field>
-<mat-form-field>
-  <mat-select placeholder="City">
-    <mat-option *ngFor="let city of cities" [value]="city.id">
-      {{city .name }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<button mat-button color="primary">Find hotels</button>
-<app-hotels-list></app-hotels-list>
+<div class="search">
+  <mat-form-field>
+    <input matInput [matDatepicker]="checkIn" placeholder="Choose check-in">
+    <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
+    <mat-datepicker #checkIn></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="checkOut" placeholder="Choose check-out">
+    <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
+    <mat-datepicker #checkOut></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City" aria-label="City" [matAutocomplete]="auto" [formControl]="cityCtrl">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCity">
+      <mat-option *ngFor="let city of filteredCities" [value]="city">
+        {{ city.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button mat-button color="primary" (click)="findHotels()">Find hotels</button>
+</div>
+<!--<app-hotels-list></app-hotels-list>-->
