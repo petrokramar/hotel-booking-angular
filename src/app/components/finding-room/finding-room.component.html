@@ -1,13 +1,15 @@
 <div class="search">
   <mat-form-field>
-    <input matInput [matDatepicker]="checkIn" placeholder="Choose check-in">
+    <input matInput [matDatepicker]="checkIn" [min]="minCheckInDate" [(ngModel)]="checkInDate"
+           placeholder="Check-in" disabled (dateChange)="checkDates()">
     <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
-    <mat-datepicker #checkIn></mat-datepicker>
+    <mat-datepicker #checkIn disabled="false"></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [matDatepicker]="checkOut" placeholder="Choose check-out">
+    <input matInput [matDatepicker]="checkOut" [min]="minCheckOutDate" [(ngModel)]="checkOutDate"
+           placeholder="Check-out" disabled>
     <mat-datepicker-toggle matSuffix [for]="checkOut"></mat-datepicker-toggle>
-    <mat-datepicker #checkOut></mat-datepicker>
+    <mat-datepicker #checkOut disabled="false"></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="City" aria-label="City" [matAutocomplete]="auto" [formControl]="cityCtrl">
