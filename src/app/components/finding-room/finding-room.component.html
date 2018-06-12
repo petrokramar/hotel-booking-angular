@@ -19,6 +19,8 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button mat-button color="primary" (click)="findHotels()">Find hotels</button>
+  <button mat-button color="primary" (click)="findHotels()" [disabled]="!(cityCtrl.value && cityCtrl.value.id)">
+    Find hotels
+  </button>
 </div>
 <!--<app-hotels-list></app-hotels-list>-->
