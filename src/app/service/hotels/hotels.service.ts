@@ -40,6 +40,20 @@ export class HotelsService {
       );
   }
 
+  getHotelsWithFreeRooms(cityId: number, checkIn: Date, checkOut: Date, pageIndex: number, pageSize: number): Observable<HotelListDTO> {
+    return this.http.get<HotelListDTO>(this.url, {
+      params: new HttpParams()
+        .set('cityId', cityId.toString())
+        .set('checkIn', checkIn.toISOString().slice(0, 10))
+        .set('checkOut', checkOut.toISOString().slice(0, 10))
+        .set('page', pageIndex.toString())
+        .set('size', pageSize.toString())
+    })
+      .pipe(
+        catchError((error: any) => {return Observable.throw(error); })
+      );
+  }
+
   getHotel(id: number): Observable<Hotel> {
     return this.http.get<Hotel>(this.url + '/' + id)
       .pipe(
