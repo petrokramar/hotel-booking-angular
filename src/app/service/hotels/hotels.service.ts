@@ -12,7 +12,7 @@ import {HotelListDTO} from '../../model/dto/hotelListDTO';
 @Injectable()
 export class HotelsService {
 
-  private url = 'http://localhost:8080/api/hotels';
+  private url = '/api/hotels';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
