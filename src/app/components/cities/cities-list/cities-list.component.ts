@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { City } from '../../../model/entity/city';
-import { CitiesService } from '../../../service/cities/cities.service';
+import { CitiesService } from '../../../shared/services/cities.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 import {fromEvent} from 'rxjs/observable/fromEvent';

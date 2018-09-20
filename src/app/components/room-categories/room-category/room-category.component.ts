@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
-import {RoomCategoryService} from '../../../service/room-category/room-category.service';
+import {RoomCategoryService} from '../../../shared/services/room-category.service';
 import {RoomCategory} from '../../../model/entity/roomCategory';
 
 @Component({

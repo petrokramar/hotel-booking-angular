@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { CountriesService } from '../../../service/countries/countries.service';
+import { CountriesService } from '../../../shared/services/countries.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 import {fromEvent} from 'rxjs/observable/fromEvent';

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {City} from '../../model/entity/city';
-import {CitiesService} from '../../service/cities/cities.service';
+import {CitiesService} from '../../shared/services/cities.service';
 import {FormControl} from '@angular/forms';
 import {CityListDTO} from '../../model/dto/cityListDTO';
-import {HotelsService} from '../../service/hotels/hotels.service';
+import {HotelsService} from '../../shared/services/hotels.service';
 import {Hotel} from '../../model/entity/hotel';
 import {HotelListDTO} from '../../model/dto/hotelListDTO';
 import {MatTableDataSource} from '@angular/material';

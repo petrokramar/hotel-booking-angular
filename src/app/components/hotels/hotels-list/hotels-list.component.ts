@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Hotel} from '../../../model/entity/hotel';
-import {HotelsService} from '../../../service/hotels/hotels.service';
+import {HotelsService} from '../../../shared/services/hotels.service';
 import {Router} from '@angular/router';
 import {fromEvent} from 'rxjs/observable/fromEvent';
 import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';

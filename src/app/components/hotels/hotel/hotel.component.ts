@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {City} from '../../../model/entity/city';
 import {Country} from '../../../model/entity/country';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CitiesService} from '../../../service/cities/cities.service';
+import {CitiesService} from '../../../shared/services/cities.service';
 import {CityRequest} from '../../../model/request/cityRequest';
-import {CountriesService} from '../../../service/countries/countries.service';
+import {CountriesService} from '../../../shared/services/countries.service';
 import {Location} from '@angular/common';
 import {Hotel} from '../../../model/entity/hotel';
-import {HotelsService} from '../../../service/hotels/hotels.service';
+import {HotelsService} from '../../../shared/services/hotels.service';
 import {HotelRequest} from '../../../model/request/hotelRequest';
 
 @Component({
