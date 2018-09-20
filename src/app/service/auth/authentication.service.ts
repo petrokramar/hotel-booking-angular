@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class AuthenticationService {
 
-  static AUTH_TOKEN = 'http://localhost:8080/oauth/token';
+  static AUTH_TOKEN = 'http://localhost:8080/api/oauth/token';
   static TOKEN_AUTH_USERNAME = 'testjwtclientid';
   static TOKEN_AUTH_PASSWORD = 'XY7kmzoNzl100';
   constructor(private http: HttpClient, private router: Router) { }

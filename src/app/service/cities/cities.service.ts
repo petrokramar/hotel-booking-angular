@@ -9,7 +9,7 @@ import {CityListDTO} from '../../model/dto/cityListDTO';
 @Injectable()
 export class CitiesService {
 
-  private url = 'http://localhost:8080/cities';
+  private url = 'http://localhost:8080/api/cities';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
