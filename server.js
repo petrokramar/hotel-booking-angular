@@ -1,15 +1,18 @@
 const express = require('express');
-const path = require('path');
 
 const app = express();
 
+const proxy = require('http-proxy-middleware');
+const apiProxy = proxy('/api/*',
+  {
+    target: process.env.BACKEND_URI,
+    logLevel: 'debug',
+    changeOrigin: true,
+    secure: false
+  });
+
+app.use(apiProxy);
+
 app.use(express.static(__dirname + '/dist'));
-// app.use(express.static(__dirname + '/dist/<name-of-app>'));
 
-// app.get('/*', function(req,res) {
-
-// res.sendFile(path.join(__dirname+'/dist/index.html'));
-// });
-
-// Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 4200);
