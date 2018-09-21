@@ -3,9 +3,9 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Hotel} from '../../../model/entity/hotel';
 import {HotelsService} from '../../../shared/services/hotels.service';
 import {Router} from '@angular/router';
-import {fromEvent} from 'rxjs/observable/fromEvent';
+import {fromEvent} from 'rxjs';
 import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
-import {merge} from 'rxjs/observable/merge';
+import {merge} from 'rxjs';
 import {HotelListDTO} from '../../../model/dto/hotelListDTO';
 
 @Component({

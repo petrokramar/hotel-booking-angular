@@ -2,9 +2,9 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import { CountriesService } from '../../../shared/services/countries.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
-import {fromEvent} from 'rxjs/observable/fromEvent';
+import {fromEvent} from 'rxjs';
 import {debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
-import {merge} from 'rxjs/observable/merge';
+import {merge} from 'rxjs';
 import {Country} from '../../../model/entity/country';
 import {CountryListDTO} from '../../../model/dto/countryListDTO';
 

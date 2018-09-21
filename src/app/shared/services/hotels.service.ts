@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Hotel} from '../../model/entity/hotel';
-import {City} from '../../model/entity/city';
-import {CityRequest} from '../../model/request/cityRequest';
 import {catchError} from 'rxjs/operators';
 import {HotelRequest} from '../../model/request/hotelRequest';
-import {CountryListDTO} from '../../model/dto/countryListDTO';
 import {HotelListDTO} from '../../model/dto/hotelListDTO';
 
 @Injectable()
@@ -62,7 +59,7 @@ export class HotelsService {
   }
 
   saveHotel(hotel: HotelRequest): Observable<Hotel> {
-    return this.http.post<HotelRequest>(this.url, hotel, this.httpOptions)
+    return this.http.post<Hotel>(this.url, hotel, this.httpOptions)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })
       );

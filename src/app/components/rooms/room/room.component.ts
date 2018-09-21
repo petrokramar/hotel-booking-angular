@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {City} from '../../../model/entity/city';
-import {Country} from '../../../model/entity/country';
 import {Location} from '@angular/common';
-import {CitiesService} from '../../../shared/services/cities.service';
-import {CountriesService} from '../../../shared/services/countries.service';
-import {CityRequest} from '../../../model/request/cityRequest';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Room} from '../../../model/entity/room';
 import {RoomCategory} from '../../../model/entity/roomCategory';

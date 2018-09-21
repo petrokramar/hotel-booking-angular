@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Room} from '../../model/entity/room';
-import {City} from '../../model/entity/city';
 import {catchError} from 'rxjs/operators';
-import {CityRequest} from '../../model/request/cityRequest';
 import {RoomRequest} from '../../model/request/roomRequest';
 
 @Injectable()
@@ -30,7 +28,7 @@ export class RoomService {
   }
 
   saveRoom(room: RoomRequest): Observable<Room> {
-    return this.http.post<RoomRequest>(this.url, room, this.httpOptions)
+    return this.http.post<Room>(this.url, room, this.httpOptions)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })
       );

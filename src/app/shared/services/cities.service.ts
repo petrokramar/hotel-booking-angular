@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { City } from '../../model/entity/city';
 import {catchError} from 'rxjs/operators';
@@ -42,7 +42,7 @@ export class CitiesService {
   }
 
   saveCity(city: CityRequest): Observable<City> {
-    return this.http.post<CityRequest>(this.url, city, this.httpOptions)
+    return this.http.post<City>(this.url, city, this.httpOptions)
       .pipe(
         catchError((error: any) => {return Observable.throw(error); })
       );
