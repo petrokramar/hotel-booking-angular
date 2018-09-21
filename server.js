@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 const proxy = require('http-proxy-middleware');
-const apiProxy = proxy('/api/*',
+const apiProxy = proxy('/api/',
   {
     target: process.env.BACKEND_URI,
     logLevel: 'debug',
